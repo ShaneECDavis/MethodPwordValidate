@@ -23,7 +23,7 @@ public class CheckPassword {
 		
 		
 	}
-		
+		// Looks Good.  Good to test the easy thing first which you are. 
 		public static void passwd(String pwordIn) {
 			if (pwordIn.length() < 8) {
 				//for(int i = 0; i < pwordIn.length(); i++) {
