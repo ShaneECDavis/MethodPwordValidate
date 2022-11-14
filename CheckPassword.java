@@ -20,10 +20,10 @@ public class CheckPassword {
 		//so far only checking if at least 8 digits
 		
 		passwd(pwordIn);
-		
+		pwordcheckdigit(pwordIn);
 		
 	}
-		// Looks Good.  Good to test the easy thing first which you are. 
+		
 		public static void passwd(String pwordIn) {
 			if (pwordIn.length() < 8) {
 				//for(int i = 0; i < pwordIn.length(); i++) {
@@ -34,7 +34,20 @@ public class CheckPassword {
 				System.out.println(pwordIn +" Is a valid password ");
 
 }
-}
+		}
+
+		//newest part loop sucks, not sure what im doing. try again in AM
+
+		public static void pwordcheckdigit(String passwd) {
+			for(int i = 0; i < passwd.length(); i++) {
+				if(Character.isLetterOrDigit(passwd.charAt(i) ))
+					System.out.println(" Is a valid password");
+				
+				else {
+					System.out.println(" Is not a valid password");
+				}
+			}
+		}
 }
 
 
