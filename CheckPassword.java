@@ -40,12 +40,12 @@ public class CheckPassword {
 			}
 		}
 		
-		if(pwordIn.length() >= 8){
-			for(int i = 0; i < pwordIn.length(); i++) {
-				if(Character.isDigit(pwordIn.charAt(i) < 2))
-				return false;
-			}
-		}
+//		if(pwordIn.length() >= 8){
+//			for(int i = 0; i < pwordIn.length(); i++) {
+//				if(Character.isDigit(pwordIn.charAt(i) < 2))
+//				return false;
+//			}
+//		}
 		return true;
 	}
 	
