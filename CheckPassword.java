@@ -22,6 +22,23 @@ public class CheckPassword {
 		passwd(pwordIn);
 		pwordcheckdigit(pwordIn);
 		
+		//Shane Notes:
+		bool testBool = pwdCheck(pwordIn);
+		
+		if(testBool) System.out.println(pwordIn +" Is a valid password ");
+		
+		else(!testBool) System.out.println(pwordIn + " Is an invalid password ");
+			
+		
+	}
+	
+	
+	// Shane Notes: This one has only one check in it to start. 
+	public static bool pwdCheck(String pwdIn){
+		if(pwordIn.Length() < 8){
+			return false;
+		}
+		else return true;
 	}
 		
 		public static void passwd(String pwordIn) {
