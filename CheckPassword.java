@@ -17,59 +17,90 @@ public class CheckPassword {
 		//This is controlling what is output
 		
 		
-		//so far only checking if at least 8 digits
+		System.out.println(passwd(pwordIn));
 		
-		passwd(pwordIn);
-		pwordcheckdigit(pwordIn);
-		
-		//Shane Notes:
-		bool testBool = pwdCheck(pwordIn);
-		
-		if(testBool) System.out.println(pwordIn +" Is a valid password ");
-		
-		else(!testBool) System.out.println(pwordIn + " Is an invalid password ");
-			
+		//passwd(pwordIn);
+//		pwordcheckdigit(pwordIn);
 		
 	}
-	
-	
-	// Shane Notes: This one has only one check in it to start. 
-	public static bool pwdCheck(String pwdIn){
-		if(pwordIn.Length() < 8){
+	//so far only checking if at least 8 digits
+	//checking if is digit and is letter
+	public static boolean passwd(String pwordIn) {
+		
+		if(pwordIn.length() < 8) {
 			return false;
 		}
-		else return true;
-	}
-		
-		public static void passwd(String pwordIn) {
-			if (pwordIn.length() < 8) {
-				//for(int i = 0; i < pwordIn.length(); i++) {
-				System.out.println(pwordIn + " Is an invalid password ");	
-				}
-			
-			else {
-				System.out.println(pwordIn +" Is a valid password ");
-
-}
+//		else {
+//		return true;
+//		}
+		if(pwordIn.length() >= 8){
+			for(int i = 0; i < pwordIn.length(); i++) {
+				if(!Character.isLetterOrDigit(pwordIn.charAt(i)))
+				return false;
+			}
 		}
+		
+		if(pwordIn.length() >= 8){
+			for(int i = 0; i < pwordIn.length(); i++) {
+				if(Character.isDigit(pwordIn.charAt(i) < 2))
+				return false;
+			}
+		}
+		return true;
+	}
+	
+}
+
+		
+//		public static void passwd(String pwordIn) {
+//			if (pwordIn.length() < 8) {
+//				
+//				
+//				//for(int i = 0; i < pwordIn.length(); i++) {
+//				System.out.println(pwordIn + " Is an invalid password ");	
+//				
+//				
+//				}
+//			
+//			else {
+//				for(int i = 0; i < pwordIn.length(); i++) {
+//					if(Character.isLetterOrDigit(pwordIn.charAt(i) ))
+//						System.out.println(" Is a valid password");
+//					
+//					else {
+//						System.out.println(" Is not a valid password");
+//						break;
+//					}
+//					
+//					
+//				}
+//				
+//				}
+//			System.out.println(pwordIn +" Is a valid password ");
+//}
+//}
 //comment added here
 		//newest part loop sucks, not sure what im doing. try again in AM
 
-		public static void pwordcheckdigit(String passwd) {
-			for(int i = 0; i < passwd.length(); i++) {
-				if(Character.isLetterOrDigit(passwd.charAt(i) ))
-					System.out.println(" Is a valid password");
-				
-				else {
-					System.out.println(" Is not a valid password");
-				}
-			}
-		}
-}
+//		public static void pwordcheckdigit(String passwd) {
+//			for(int i = 0; i < passwd.length(); i++) {
+//				if(Character.isLetterOrDigit(passwd.charAt(i) ))
+//					System.out.println(" Is a valid password");
+//				
+//				else {
+//					System.out.println(" Is not a valid password");
+//				}
+//}
+//		}
+//}
+// valid = 12abcdef
+// ! valid = 1abcdefg
+// ! valid = @1abcdef
+//! valid = @abcdefg
 
-
-
-
+//else {
+//System.out.println(" Is not a valid password");
+//}
 
 
 
