@@ -35,7 +35,7 @@ public class CheckPassword {
 
 }
 		}
-
+//comment added here
 		//newest part loop sucks, not sure what im doing. try again in AM
 
 		public static void pwordcheckdigit(String passwd) {
