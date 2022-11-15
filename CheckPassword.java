@@ -16,6 +16,7 @@ public class CheckPassword {
 		String pwordIn = keyboard.nextLine();
 		//This is controlling what is output
 		
+		boolean temp = ;
 		
 		System.out.println(passwd(pwordIn));
 		
