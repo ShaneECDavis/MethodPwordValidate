@@ -16,9 +16,9 @@ public class CheckPassword {
 		String pwordIn = keyboard.nextLine();
 		//This is controlling what is output
 		
-		boolean temp = ;
+//		boolean temp = passwd(pwordIn) ;
 		
-		System.out.println(passwd(pwordIn));
+		System.out.println(passwd(pwordIn) + ": " + pwordIn);
 		
 		//passwd(pwordIn);
 //		pwordcheckdigit(pwordIn);
@@ -26,28 +26,27 @@ public class CheckPassword {
 	}
 	//so far only checking if at least 8 digits
 	//checking if is digit and is letter
-	public static boolean passwd(String pwordIn) {
+	public static String passwd(String pwordIn) {
+		
+		int count = 0;
+		String validMessage = "Is valid!";
+		String notValidMessage = "Is not valid";
 		
 		if(pwordIn.length() < 8) {
-			return false;
+			return notValidMessage;
 		}
-//		else {
-//		return true;
-//		}
-		if(pwordIn.length() >= 8){
-			for(int i = 0; i < pwordIn.length(); i++) {
-				if(!Character.isLetterOrDigit(pwordIn.charAt(i)))
-				return false;
-			}
+
+		for(int i = 0; i < pwordIn.length(); i++) {
+			if(!Character.isLetterOrDigit(pwordIn.charAt(i)))
+				return notValidMessage;
+			if(Character.isDigit(pwordIn.charAt(i)))
+				count++;
 		}
-		
-//		if(pwordIn.length() >= 8){
-//			for(int i = 0; i < pwordIn.length(); i++) {
-//				if(Character.isDigit(pwordIn.charAt(i) < 2))
-//				return false;
-//			}
-//		}
-		return true;
+
+		if(count < 2) 
+			return notValidMessage;
+						
+		return validMessage;
 	}
 	
 }
