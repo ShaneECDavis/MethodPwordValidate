@@ -31,20 +31,29 @@ public class CheckPassword {
 		int count = 0;
 		String validMessage = "Is valid!";
 		String notValidMessage = "Is not valid";
+		String errorMessage = "";
 		
 		if(pwordIn.length() < 8) {
-			return notValidMessage;
+			errorMessage += "Needs to have more then 8 characters. ";
+		//	return notValidMessage;
 		}
 
 		for(int i = 0; i < pwordIn.length(); i++) {
-			if(!Character.isLetterOrDigit(pwordIn.charAt(i)))
-				return notValidMessage;
+			if(!Character.isLetterOrDigit(pwordIn.charAt(i))){
+				errorMessage += "Cannot have any special characters. ";
+		//		return notValidMessage;
+			}
 			if(Character.isDigit(pwordIn.charAt(i)))
 				count++;
 		}
 
-		if(count < 2) 
-			return notValidMessage;
+		if(count < 2) {
+			errorMessage += "Must contain at least 2 numbers";
+	//		return notValidMessage;
+		}
+
+		if(!errorMessage.isEmpty())
+			return "Not a valid password because: " + errorMessage;
 						
 		return validMessage;
 	}
